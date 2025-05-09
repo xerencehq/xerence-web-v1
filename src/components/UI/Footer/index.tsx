@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import raft_footer_logo from '../../../../public/svgs/raft_footer_logo.svg';
+import xerence_footer_logo from '../../../../public/svgs/logo_full_white.svg';
 import qr_code from '../../../../public/svgs/qr_code.svg';
 import ic_google_playstore from '../../../../public/svgs/ic_google_playstore.svg';
 import ic_baseline_apple from '../../../../public/svgs/ic_baseline_apple.svg';
@@ -44,11 +44,11 @@ const Footer = () => {
     <Wrapper>
       <Inner>
         <FooterLogo>
-          <Image src={raft_footer_logo} alt="raft_footer_logo" />
+          <Image src={xerence_footer_logo} width={200} alt="xerence_footer_logo" />
         </FooterLogo>
         <FooterMainContent>
           <FooterMiddle>
-            <QRContainer>
+            {/* <QRContainer>
               <QRImageCtn>
                 <Image src={qr_code} alt="qr_code" />
               </QRImageCtn>
@@ -59,7 +59,7 @@ const Footer = () => {
                   <Image src={ic_baseline_apple} alt="apple icon" />
                 </IconCtn>
               </TextCtn>
-            </QRContainer>
+            </QRContainer> */}
             <FooterNavigation>
               {linksArr.map((l, i) => (
                 <GridColumn key={i}>
@@ -80,7 +80,7 @@ const Footer = () => {
             </Translator>
             <CopyRight>
               <Image src={ic_copyright} alt="copyright svg" />
-              Raft Corp, LLC.
+              Xerence Innovations, LLC.
             </CopyRight>
           </FooterBottom>
         </FooterMainContent>

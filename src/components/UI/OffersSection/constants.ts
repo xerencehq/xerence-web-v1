@@ -4,44 +4,44 @@ import wealth_management from '../../../../public/images/wealth_management.png';
 import financial_planning from '../../../../public/images/financial_planning.png';
 // For desktop
 export const desktopHeaderPhrases = [
-  'Elevate Your Financial',
-  'Journey with RAFT',
+  'Innovation. Intelligence',
+  'Impact.',
 ];
 export const desktopParagraphPhrase = [
-  'RAFT offers a world of financial possibilities. From investments to payments,',
-  "we've got you covered. Join us and unlock your potential today.",
+  'At Xerence, we build more than software — we engineer possibilities.',
+  "From cutting-edge AI-powered applications to tailored digital products and expert tech consultancy.",
 ];
 
 // For mobile
 export const mobileParagraphPhrase = [
-  'RAFT offers a world of financial possibilities. From',
-  "investments to payments, we've got you covered.",
-  'Join us and unlock your potential today.',
+  'At Xerence, we build more than software — we engineer possibilities.',
+  "From cutting-edge AI-powered applications to tailored digital products and expert tech consultancy.",
 ];
 
 export const offers = [
   {
     illustration: seamless_payments,
-    title: 'Seamless Payments',
+    title: 'Payment Systems',
     details:
-      'Enjoy secure, seamless transactions that make managing your money a breeze.',
+      'We design and develop payment systems that simplify and enhance your financial operations.',
   },
   {
-    illustration: smart_investing,
-    title: 'Smart Investing',
+ 
+     illustration: smart_investing,
+    title: 'Blockchain Technology',
     details:
-      'Grow your wealth confidently with our personalized investment solutions, tailored to your financial goals.',
+      'Leverage the power of blockchain to streamline your operations and drive growth.',
   },
-  {
-    illustration: wealth_management,
-    title: 'Wealth Management',
+   {
+     illustration: wealth_management,
+    title: 'AI-Powered Solutions',
     details:
-      'Make informed decisions for your financial future with our wealth management expertise.',
+      'Leverage the power of AI to streamline your operations and drive growth.',
   },
   {
     illustration: financial_planning,
-    title: 'Financial Planning',
+    title: 'Much more',
     details:
-      'Achieve your financial dreams with our comprehensive financial planning services, guiding you toward a secure future.',
+      'We offer a wide range of services, from financial planning to blockchain technology and AI-powered solutions.',
   },
 ];

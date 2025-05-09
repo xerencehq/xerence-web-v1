@@ -19,23 +19,48 @@ export const animate = {
 
 export const faqData: FAQItem[] = [
   {
-    question: 'How do I create an account with RAFT?',
+    question: 'What services does Xerence offer?',
     answer:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      'We specialize in AI-powered software development, technology consultancy, and custom-built digital products that prioritize security, innovation, and user experience.',
   },
   {
-    question: 'How does RAFT ensure the security of my financial data?',
+    question: 'Who are your solutions designed for?',
     answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+      'Our solutions are built for startups, enterprises, and government organizations looking to innovate, scale securely, and stay ahead of the curve.',
   },
   {
-    question: 'What types of transactions can I perform with RAFT?',
+    question: 'Do you offer fully custom software development?',
     answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+      "Yes, we collaborate closely with clients to build tailored solutions from the ground up — whether it's a platform, mobile app, internal tool, or AI-driven system.",
   },
   {
-    question: 'What benefits does RAFT offer for wealth management?',
+    question: 'What industries do you work with?',
     answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+      "We’re industry-agnostic but have experience across finance, health, e-commerce, education, and government sectors.",
+  },
+  {
+    question: 'How does your AI integration work?',
+    answer:
+      "We leverage modern AI technologies to automate processes, enhance decision-making, and improve user interaction. We’ll work with you to determine the right models and architecture for your needs.",
+  },
+  {
+    question: 'Is security a core part of your development process?',
+    answer:
+      "Absolutely. We integrate strong security practices at every stage — from architecture to deployment — using encryption, compliance standards, and secure coding techniques.",
+  },
+  {
+    question: 'Can I consult with Xerence before starting a project?',
+    answer:
+      "Yes, we offer expert technology consulting to help define your vision, assess feasibility, and outline a strategic plan before development begins.",
+  },
+  {
+    question: 'Do you work with existing systems or only build from scratch?',
+    answer:
+      "We do both. Whether you need to modernize an existing system, integrate AI into your workflows, or build a new solution, we can help.",
+  },
+  {
+    question: 'How can I get started with Xerence?',
+    answer:
+      "Simply reach out through our email hello@xerence.com to request a free consultation. We’ll set up a discovery session to understand your needs and explore the best path forward.",
   },
 ];

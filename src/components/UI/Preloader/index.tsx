@@ -11,7 +11,7 @@ const Preloader = ({
 }: {
   setComplete: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const word = ['R', 'a', 'f', 't'];
+  const word = ['X', 'e', 'r', 'e', 'n', 'c', 'e'];
 
   const spans = useRef<any>([]); // Create a ref to store the span elements
   const imageRef = useRef(null);
@@ -62,7 +62,13 @@ const Preloader = ({
     <>
       <Wrapper ref={wrapperRef}>
         <Inner>
-          <Image ref={imageRef} src={ic_import} alt="import icon" />
+          <Image
+            ref={imageRef}
+            src={ic_import}
+            alt="import icon"
+            width={20}
+            // height={20}
+          />
           <div>
             {word.map((t, i) => (
               <div

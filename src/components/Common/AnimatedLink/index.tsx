@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Div, Word, Span, AbsoluteContainer } from './styles';
+import Link from 'next/link';
 
 type AnimationProps = {
   rest: {
@@ -57,10 +58,12 @@ const letterAnimationTwo = {
   },
 };
 
-const AnimatedLink = ({ title }: { title: string }) => {
+const AnimatedLink = ({ title, url }: { title: string, url: string }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
+   <Link href={url}>
     <Div
+    
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -76,7 +79,7 @@ const AnimatedLink = ({ title }: { title: string }) => {
           isHovered={isHovered}
         />
       </AbsoluteContainer>
-    </Div>
+    </Div></Link>
   );
 };
 

@@ -10,9 +10,9 @@ export const desktopParagraphPhrase = [
   "That's why we offer you the freedom you deserve.",
 ];
 export const desktopBriefNotePhrase = [
-  'Smart investments,',
-  'secure payments, and',
-  'expert guidance, all in',
+  'Intelligent solutions,',
+  'secure architecture, and',
+  'expert insight, all in',
   'one place.',
 ];
 
@@ -25,12 +25,12 @@ export const mobileParagraphPhrase = [
 ];
 
 export const mobileBriefNotePhrase = [
-  'Smart',
-  ' investments,',
+  'Intelligent',
+  ' solutions,',
   'secure',
-  ' payments,',
+  ' architecture,',
   'and expert',
-  'guidance, all',
+  'insight, all',
   'in one place.',
 ];
 

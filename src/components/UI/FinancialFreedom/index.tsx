@@ -32,7 +32,7 @@ const FinancialFreedom = () => {
 
   return (
     <Wrapper>
-      <Inner>
+      {/* <Inner>
         <Header>
           {isMobile ? (
             <>
@@ -72,7 +72,7 @@ const FinancialFreedom = () => {
             </Edge>
           ))}
         </Edges>
-      </Inner>
+      </Inner> */}
       <BriefNote>
         {isMobile ? (
           <MaskText phrases={mobileBriefNotePhrase} tag="p" />

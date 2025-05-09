@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { Wrapper, Inner, Pill, HeroTextContainer } from './styles';
 import ic_chevron_right from '../../../../public/svgs/ic_chevron_right.svg';
-import { GetStartedButton } from '@/components';
 import MaskText from '@/components/Common/MaskText';
 import { useIsMobile } from '../../../../libs/useIsMobile';
 import {
@@ -11,6 +10,7 @@ import {
   paragraphPhrases,
   phrases,
 } from './constants';
+import ContactUsButton from '@/components/Common/ContactUsButton';
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
@@ -18,7 +18,7 @@ const HeroSection = () => {
     <Wrapper>
       <Inner>
         <Pill>
-          <span>Introducing Raft cards</span>
+          <span>Let&apos;s chat</span>
           <Image src={ic_chevron_right} alt="chevron-right" />
         </Pill>
         <HeroTextContainer>
@@ -34,7 +34,7 @@ const HeroSection = () => {
             </>
           )}
         </HeroTextContainer>
-        <GetStartedButton padding="1rem 2rem" />
+        <ContactUsButton padding="1rem 2rem" />
       </Inner>
     </Wrapper>
   );

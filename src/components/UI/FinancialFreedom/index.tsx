@@ -31,7 +31,7 @@ const FinancialFreedom = () => {
   const isMobile = useIsMobile();
 
   return (
-    <Wrapper>
+    <Wrapper id="about">
       {/* <Inner>
         <Header>
           {isMobile ? (

@@ -17,6 +17,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { links, menu } from './constants';
 import ContactUsButton from '@/components/Common/ContactUsButton';
+import Link from 'next/link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,9 @@ const Header = () => {
     <Wrapper>
       <Inner>
         <LogoContainer>
-          <Image src={logo_white} alt="logo" priority width={140} />
+          <Link href="/">
+            <Image src={logo_white} alt="logo" priority width={140} />
+          </Link>
           <BurgerMenu onClick={() => setIsOpen(!isOpen)}>
             <motion.div
               variants={menu}

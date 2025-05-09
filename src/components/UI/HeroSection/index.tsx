@@ -11,16 +11,18 @@ import {
   phrases,
 } from './constants';
 import ContactUsButton from '@/components/Common/ContactUsButton';
+import Link from 'next/link';
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
   return (
     <Wrapper>
       <Inner>
+       <Link href="mailto:hello@xerence.com">
         <Pill>
           <span>Let&apos;s chat</span>
           <Image src={ic_chevron_right} alt="chevron-right" />
-        </Pill>
+        </Pill></Link>
         <HeroTextContainer>
           {isMobile ? (
             <>

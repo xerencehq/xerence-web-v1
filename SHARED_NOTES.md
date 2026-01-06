@@ -85,6 +85,14 @@
    - `types.ts` - TypeScript interfaces (if needed)
    - `__tests__/ComponentName.test.tsx` - Tests
 
+6. **Pluggable Analytics Architecture** (T015): The analytics module uses an abstracted event layer (`src/lib/analytics/events.ts`) with provider-agnostic function names (e.g., `trackCTAClick`, `trackProjectView`). Components import only from `@/lib/analytics`, never from provider-specific code. To swap analytics providers (e.g., from Google Analytics to Plausible, Mixpanel, or Posthog):
+   - Only modify `src/lib/analytics/gtag.ts` (rename to provider.ts)
+   - Keep the same exported function signatures
+   - Update `GoogleAnalytics.tsx` component with new provider script
+   - No changes needed in components or pages
+
+7. **Image Optimization**: All images use Next.js `Image` component with proper `sizes` attribute for responsive loading. T017 will audit and optimize any remaining image issues for Lighthouse scores.
+
 ---
 
 ## Questions

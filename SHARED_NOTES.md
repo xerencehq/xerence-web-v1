@@ -63,6 +63,40 @@
 - `src/app/globals.css` - Global CSS with font imports
 - `src/components/Layout/styles.ts` - GlobalStyles component
 
+### [2026-01-06 15:15] Agent: claude-opus | Task: T001
+
+**Testing Infrastructure Setup Complete**
+
+Key learnings from T001 implementation:
+
+1. **React 19 Compatibility**: The project uses React 19, which requires `@testing-library/react@^16.1.0` (not v14.x). The v14 series only supports React 18.
+
+2. **Jest Configuration**:
+   - `testMatch` must be explicitly set to only match `.test.ts(x)` files
+   - Mock files and test-utils in `__tests__` folder need to be excluded via `testPathIgnorePatterns`
+
+3. **Test Utilities Location**:
+   - `src/__tests__/test-utils.tsx` - Custom render with ThemeProvider wrapper
+   - `src/__tests__/mocks/` - All mock files for external dependencies
+
+4. **Available Test Commands**:
+   ```bash
+   npm run test          # Run all tests
+   npm run test:watch    # Watch mode
+   npm run test:coverage # With coverage report
+   npm run test:ci       # CI mode with coverage
+   ```
+
+5. **Using the Custom Render**:
+   ```typescript
+   import { render, screen } from '@/__tests__/test-utils';
+   // NOT from '@testing-library/react' directly
+   ```
+
+6. **Framer Motion Mock**: ESLint rules disabled in mock file (react/display-name, etc.) since it's test infrastructure, not production code.
+
+7. **Note for T003**: The `test-utils.tsx` has a placeholder theme. Once T003 creates `src/styles/theme.ts`, update the import in test-utils.tsx to use the real theme.
+
 ---
 
 ## Decisions

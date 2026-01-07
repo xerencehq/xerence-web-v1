@@ -95,7 +95,51 @@ Key learnings from T001 implementation:
 
 6. **Framer Motion Mock**: ESLint rules disabled in mock file (react/display-name, etc.) since it's test infrastructure, not production code.
 
-7. **Note for T003**: The `test-utils.tsx` has a placeholder theme. Once T003 creates `src/styles/theme.ts`, update the import in test-utils.tsx to use the real theme.
+### [2026-01-07 10:30] Agent: claude-opus | Task: T003
+
+**Design System Implementation Complete**
+
+Key learnings from T003 implementation:
+
+1. **Theme Color Casing**: Brand colors use uppercase hex (`#FFFFFF`, `#ECFF88`). Ensure test assertions match this casing.
+
+2. **Import Paths**: Use `@/styles/theme` for the theme, or `@/styles` for barrel imports. The TypeScript declaration at `src/types/styled.d.ts` extends `DefaultTheme`.
+
+3. **Using the Theme in Components**:
+   ```typescript
+   import styled from 'styled-components';
+
+   const Box = styled.div`
+     color: ${({ theme }) => theme.colors.primary};
+     padding: ${({ theme }) => theme.spacing[4]};
+   `;
+   ```
+
+4. **Using Mixins**:
+   ```typescript
+   import styled from 'styled-components';
+   import { flexCenter, containerStyles } from '@/styles';
+
+   const Container = styled.div`
+     ${containerStyles}
+     ${flexCenter}
+   `;
+   ```
+
+5. **Using Animations**:
+   ```typescript
+   // Styled-components keyframes
+   import { fadeInUp, animationMixin } from '@/styles';
+   const Animated = styled.div`
+     ${animationMixin(fadeInUp, '0.5s')}
+   `;
+
+   // Framer Motion variants
+   import { fadeInUpVariant } from '@/styles';
+   <motion.div variants={fadeInUpVariant} initial="hidden" animate="visible" />
+   ```
+
+6. **test-utils.tsx Updated**: Now uses the real theme from `@/styles/theme`.
 
 ---
 
@@ -166,7 +210,19 @@ If you need to modify a shared file, document it here first and wait for confirm
 
 > Brief summary of what each completed task accomplished
 
-*No tasks completed yet.*
+### T001: Testing Infrastructure
+- Jest + React Testing Library with React 19 support
+- Styled-components jest matchers
+- Custom render wrapper with ThemeProvider
+- Mocks for framer-motion, next/navigation, IntersectionObserver
+
+### T003: Design System & Global Configuration
+- Complete theme with all design tokens (colors, fonts, spacing, etc.)
+- TypeScript declaration for styled-components DefaultTheme
+- GlobalStyles with CSS reset and base typography
+- Animation utilities (keyframes + Framer Motion variants)
+- Style mixins (flexbox helpers, container, truncate, etc.)
+- Updated test-utils.tsx to use real theme
 
 ---
 

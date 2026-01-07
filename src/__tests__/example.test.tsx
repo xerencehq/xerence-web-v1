@@ -50,7 +50,7 @@ describe('Testing Infrastructure Verification', () => {
     it('should have styled-components jest matchers available', () => {
       render(<SimpleComponent title="Matcher Test" />);
       const component = screen.getByTestId('test-component');
-      expect(component).toHaveStyleRule('color', '#ffffff');
+      expect(component).toHaveStyleRule('color', '#FFFFFF');
       expect(component).toHaveStyleRule('background', '#070606');
     });
   });

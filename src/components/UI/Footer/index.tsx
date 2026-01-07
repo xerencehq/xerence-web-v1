@@ -44,7 +44,7 @@ const Footer = () => {
     <Wrapper>
       <Inner>
         <FooterLogo>
-          <Image src={xerence_footer_logo} width={200} alt="xerence_footer_logo" />
+          <Image src={xerence_footer_logo} width={200} height={40} alt="Xerence logo" />
         </FooterLogo>
         <FooterMainContent>
           <FooterMiddle>
@@ -76,10 +76,10 @@ const Footer = () => {
           <FooterBottom>
             <Translator>
               <h3>English (United Kingdom)</h3>
-              <Image src={ic_chevron_down} alt="chevron down" />
+              <Image src={ic_chevron_down} width={16} height={16} alt="" aria-hidden="true" />
             </Translator>
             <CopyRight>
-              <Image src={ic_copyright} alt="copyright svg" />
+              <Image src={ic_copyright} width={16} height={16} alt="" aria-hidden="true" />
               Xerence Innovations, Ltd.
             </CopyRight>
           </FooterBottom>

@@ -54,6 +54,12 @@ export const MenuLink = styled.a<MenuLinkProps>`
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
 `;
 
 export const MenuCTA = styled.a`
@@ -70,5 +76,10 @@ export const MenuCTA = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 4px;
   }
 `;

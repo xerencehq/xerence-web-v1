@@ -33,7 +33,12 @@ export default function RootLayout({
       </head>
       <body>
         <GoogleAnalytics />
-        <Layout>{children}</Layout>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <Layout>
+          <div id="main-content">{children}</div>
+        </Layout>
       </body>
     </html>
   );

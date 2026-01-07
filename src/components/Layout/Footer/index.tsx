@@ -33,6 +33,7 @@ import {
   LegalLinks,
   LegalLink,
 } from './styles';
+import Image from 'next/image';
 
 interface SocialIconProps {
   icon: string;
@@ -76,7 +77,7 @@ const Footer: React.FC = () => {
         >
           {/* Brand Column */}
           <FooterBrand as={motion.div} variants={staggerItemVariant}>
-            <BrandLogo href="/">Xerence</BrandLogo>
+            <Image src="/svgs/logo_white.svg" alt="Xerence Logo" width={40} height={40} />
             <BrandTagline>{COMPANY_INFO.tagline}</BrandTagline>
             <SocialLinks>
               {SOCIAL_LINKS.map((social) => (

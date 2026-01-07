@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { hoverLift } from '@/styles';
 import { CardWrapper, CardImage, CardContent, CardTitle, CardDescription, CardFooter } from './styles';
@@ -33,7 +34,13 @@ const Card: React.FC<CardProps> = ({
     <>
       {image && (
         <CardImage $variant={variant}>
-          <img src={image} alt={imageAlt || title} loading="lazy" />
+          <Image
+            src={image}
+            alt={imageAlt || title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: 'cover' }}
+          />
         </CardImage>
       )}
       <CardContent $variant={variant}>

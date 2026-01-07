@@ -610,6 +610,31 @@ const projectJsonLd = createProjectJsonLd(
 />
 ```
 
+### T017: Performance Optimization & Lighthouse Audit
+- **Next.js Config Optimizations**: Added compress, poweredByHeader: false, image formats (AVIF, WebP), optimizePackageImports
+- **Skip-to-Content Link**: Added skip link for accessibility in layout.tsx with styles in globals.css
+- **Image Optimizations**: Fixed raw `<img>` tags in Team.tsx and Card/index.tsx with Next.js Image, added sizes attribute to fill images
+- **Accessibility Fixes**: Added aria-current to mobile nav, focus-visible styles to nav links and menu button, improved placeholder contrast
+- **Dynamic Import**: CalendlyEmbed lazy loaded with ssr: false via client-side wrapper component
+- **Web Vitals**: Added performance utilities with web-vitals library for LCP, CLS, FCP, TTFB, INP measurement
+- **All 468 tests passing**, lint clean, build succeeds
+
+**Using Performance Utilities**:
+```typescript
+import { measureWebVitals, prefersReducedMotion, getWebVitalRating } from '@/lib/performance';
+
+// Initialize web vitals tracking
+measureWebVitals();
+
+// Check reduced motion preference
+if (!prefersReducedMotion()) {
+  // Run animations
+}
+
+// Get rating for a metric
+const rating = getWebVitalRating('LCP', 2500); // 'good' | 'needs-improvement' | 'poor'
+```
+
 ---
 
 ## Critical Integration Points

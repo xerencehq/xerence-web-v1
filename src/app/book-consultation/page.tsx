@@ -2,7 +2,7 @@ import { createMetadata } from '@/lib/seo';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { Section } from '@/components/Common';
-import CalendlyEmbed from '@/components/Common/CalendlyEmbed';
+import CalendlyEmbedWrapper from '@/components/Common/CalendlyEmbed/CalendlyEmbedWrapper';
 import { ConsultationHero, WhatToExpect, LeadQualifier } from '@/components/UI/ConsultationPage';
 
 export const metadata = createMetadata({
@@ -33,7 +33,7 @@ export default function BookConsultationPage() {
         </Section>
 
         <Section padding="lg" centered>
-          <CalendlyEmbed url={CALENDLY_URL} />
+          <CalendlyEmbedWrapper url={CALENDLY_URL} />
         </Section>
       </main>
       <Footer />

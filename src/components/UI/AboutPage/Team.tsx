@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { fadeInUpVariant, staggerContainerVariant, staggerItemVariant } from '@/styles';
 import type { TeamMember } from '@/data/team';
@@ -68,7 +69,13 @@ export const Team: React.FC<TeamProps> = ({ members }) => {
             >
               <TeamAvatar>
                 {member.image ? (
-                  <img src={member.image} alt={member.name} />
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={80}
+                    height={80}
+                    style={{ objectFit: 'cover', borderRadius: '50%' }}
+                  />
                 ) : (
                   <TeamAvatarPlaceholder>
                     {getInitials(member.name)}

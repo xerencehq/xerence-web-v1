@@ -21,7 +21,7 @@ export const StyledTextArea = styled.textarea<StyledTextAreaProps>`
   resize: ${({ $resize }) => $resize};
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.darkGray};
+    color: ${({ theme }) => theme.colors.mediumGray};
   }
 
   &:hover:not(:disabled) {

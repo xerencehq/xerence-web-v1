@@ -89,6 +89,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 as={Link}
                 $isActive={isActive(link.href)}
                 onClick={onClose}
+                aria-current={isActive(link.href) ? 'page' : undefined}
               >
                 {link.label}
               </MenuLink>

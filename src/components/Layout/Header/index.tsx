@@ -16,6 +16,7 @@ import {
   MenuButton,
   MenuIcon,
 } from './styles';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,7 +65,7 @@ const Header: React.FC = () => {
       >
         <HeaderContainer>
           <Logo href="/" aria-label="Xerence Home">
-            <LogoText>Xerence</LogoText>
+            <Image src="/svgs/logo_full_white.svg" alt="Xerence Logo" width={120} height={40} />
           </Logo>
 
           <Navigation links={NAV_LINKS} currentPath={pathname} />

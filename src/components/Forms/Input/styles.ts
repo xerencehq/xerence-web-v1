@@ -60,7 +60,7 @@ export const StyledInput = styled.input<StyledInputProps>`
     `}
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.darkGray};
+    color: ${({ theme }) => theme.colors.mediumGray};
   }
 
   &:hover:not(:disabled) {

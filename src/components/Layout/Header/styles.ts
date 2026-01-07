@@ -88,6 +88,12 @@ export const MenuButton = styled.button`
   border: none;
   cursor: pointer;
   z-index: 10;
+  border-radius: ${({ theme }) => theme.borderRadius.md};
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;

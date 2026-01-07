@@ -61,4 +61,10 @@ export const NavLink = styled.a<NavLinkProps>`
       transform-origin: left;
     }
   }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
 `;

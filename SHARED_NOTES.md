@@ -466,6 +466,25 @@ import { SERVICES } from '@/data/services';
 <a href="/services#ai-ml">AI/ML Solutions</a>
 ```
 
+### T011: Contact Page
+- ContactHero: Animated hero with title and subtitle
+- ContactInfo: Email, location, social links (Twitter, LinkedIn, GitHub), consultation CTA
+- ContactForm: Name, Email, Subject (select), Message fields with full validation
+- Form validation using existing validation utilities from T007
+- Success state with "Send Another Message" option
+- 15 tests covering form validation, submission, and component rendering
+
+**Using Contact Components**:
+```typescript
+import { ContactHero, ContactContent } from '@/components/UI/ContactPage';
+
+// Hero component
+<ContactHero title="Get in Touch" subtitle="We'd love to hear from you." />
+
+// Full contact content (info + form)
+<ContactContent />
+```
+
 ---
 
 ## Critical Integration Points

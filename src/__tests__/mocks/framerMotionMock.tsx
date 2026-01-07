@@ -1,103 +1,62 @@
 /* eslint-disable react/display-name, @next/next/no-img-element, jsx-a11y/alt-text, import/no-anonymous-default-export */
 import React from 'react';
 
-// Mock framer-motion to avoid animation issues in tests
-const motion = {
-  div: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <div ref={ref} {...props}>
-      {children}
-    </div>
-  )),
-  span: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <span ref={ref} {...props}>
-      {children}
-    </span>
-  )),
-  p: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <p ref={ref} {...props}>
-      {children}
-    </p>
-  )),
-  h1: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <h1 ref={ref} {...props}>
-      {children}
-    </h1>
-  )),
-  h2: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <h2 ref={ref} {...props}>
-      {children}
-    </h2>
-  )),
-  h3: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <h3 ref={ref} {...props}>
-      {children}
-    </h3>
-  )),
-  section: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <section ref={ref} {...props}>
-      {children}
-    </section>
-  )),
-  article: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <article ref={ref} {...props}>
-      {children}
-    </article>
-  )),
-  header: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <header ref={ref} {...props}>
-      {children}
-    </header>
-  )),
-  footer: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <footer ref={ref} {...props}>
-      {children}
-    </footer>
-  )),
-  nav: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <nav ref={ref} {...props}>
-      {children}
-    </nav>
-  )),
-  ul: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <ul ref={ref} {...props}>
-      {children}
-    </ul>
-  )),
-  li: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <li ref={ref} {...props}>
-      {children}
-    </li>
-  )),
-  a: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <a ref={ref} {...props}>
-      {children}
-    </a>
-  )),
-  button: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <button ref={ref} {...props}>
-      {children}
-    </button>
-  )),
-  img: React.forwardRef((props: any, ref: any) => <img ref={ref} {...props} />),
-  svg: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <svg ref={ref} {...props}>
-      {children}
-    </svg>
-  )),
-  path: React.forwardRef((props: any, ref: any) => <path ref={ref} {...props} />),
-  form: React.forwardRef(({ children, ...props }: any, ref: any) => (
-    <form ref={ref} {...props}>
-      {children}
-    </form>
-  )),
-  input: React.forwardRef((props: any, ref: any) => <input ref={ref} {...props} />),
-  textarea: React.forwardRef((props: any, ref: any) => <textarea ref={ref} {...props} />),
+// Helper to create a motion component that filters out framer-motion props
+const createMotionComponent = (Element: any) =>
+  React.forwardRef(({ children, ...props }: any, ref: any) => {
+    // Filter out framer-motion specific props
+    const {
+      initial, animate, exit, variants, transition, whileHover, whileTap,
+      whileFocus, whileDrag, whileInView, viewport, onAnimationStart,
+      onAnimationComplete, layout, layoutId, drag, dragConstraints,
+      dragElastic, dragMomentum, onDragStart, onDrag, onDragEnd,
+      ...validProps
+    } = props;
+
+    return React.createElement(Element, { ref, ...validProps }, children);
+  });
+
+// Motion elements for common HTML elements
+const motionElements: Record<string, any> = {
+  div: createMotionComponent('div'),
+  span: createMotionComponent('span'),
+  p: createMotionComponent('p'),
+  h1: createMotionComponent('h1'),
+  h2: createMotionComponent('h2'),
+  h3: createMotionComponent('h3'),
+  h4: createMotionComponent('h4'),
+  h5: createMotionComponent('h5'),
+  h6: createMotionComponent('h6'),
+  section: createMotionComponent('section'),
+  article: createMotionComponent('article'),
+  header: createMotionComponent('header'),
+  footer: createMotionComponent('footer'),
+  nav: createMotionComponent('nav'),
+  ul: createMotionComponent('ul'),
+  li: createMotionComponent('li'),
+  a: createMotionComponent('a'),
+  button: createMotionComponent('button'),
+  img: createMotionComponent('img'),
+  svg: createMotionComponent('svg'),
+  path: createMotionComponent('path'),
+  form: createMotionComponent('form'),
+  input: createMotionComponent('input'),
+  textarea: createMotionComponent('textarea'),
 };
 
 // Set display names for debugging
-Object.keys(motion).forEach((key) => {
-  (motion as any)[key].displayName = `motion.${key}`;
+Object.keys(motionElements).forEach((key) => {
+  motionElements[key].displayName = `motion.${key}`;
 });
+
+// Create motion as both a function and an object with element properties
+// This supports both motion.div and motion(Link) patterns
+const motion = Object.assign(
+  // Function form: motion(Component) returns a motion-wrapped component
+  (Component: any) => createMotionComponent(Component),
+  // Object form: motion.div, motion.span, etc.
+  motionElements
+);
 
 export const AnimatePresence = ({ children }: { children: React.ReactNode }) => <>{children}</>;
 export const useAnimation = () => ({

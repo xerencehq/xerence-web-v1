@@ -177,6 +177,47 @@ Key learnings from T004 implementation:
 
 7. **Accessibility**: All interactive elements have proper `aria-label`, `aria-expanded`, and `aria-current` attributes.
 
+### [2026-01-07 16:45] Agent: claude-opus | Task: T006
+
+**Shared UI Components Implementation Complete**
+
+Key learnings from T006 implementation:
+
+1. **Using Components**:
+   ```typescript
+   import { Button, Card, Section, H1, H2, Text, Badge, Tag } from '@/components/Common';
+
+   // Button variants
+   <Button variant="primary" size="lg">Primary</Button>
+   <Button variant="outline" loading>Loading</Button>
+   <Button href="/contact">Link Button</Button>
+
+   // Card with image
+   <Card
+     title="Project Name"
+     description="Description"
+     image="/image.jpg"
+     href="/projects/slug"
+   />
+
+   // Section with title
+   <Section title="Our Services" subtitle="What we offer" centered>
+     <ServicesGrid />
+   </Section>
+
+   // Typography
+   <H1>Main Heading</H1>
+   <Text>Paragraph text</Text>
+
+   // Badge and Tag
+   <Badge variant="success">New</Badge>
+   <Tag variant="outline" onRemove={() => {}}>React</Tag>
+   ```
+
+2. **Framer Motion Mock Update**: The mock now supports both `motion.div` and `motion(Component)` patterns. This was required for wrapping Next.js Link components.
+
+3. **Image Warning**: Card uses `<img>` for simplicity. T017 will handle image optimization with Next.js Image component.
+
 ### [2026-01-07 11:30] Agent: claude-opus | Task: T002
 
 **Sanity CMS Setup Complete**
@@ -337,6 +378,16 @@ If you need to modify a shared file, document it here first and wait for confirm
 - Copyright with dynamic year
 - Framer Motion scroll-triggered animations
 - 13 tests covering all functionality
+
+### T006: Shared UI Components
+- Button: 4 variants (primary, secondary, outline, ghost), 3 sizes, loading state, icons
+- Card: 3 variants (default, featured, compact), image support, link/click support
+- Section: Background variants, padding options, title/subtitle, centered/full-width
+- Typography: H1-H4, Text, LeadText, SmallText, HighlightText
+- Badge: 5 variants (default, success, warning, error, info), 2 sizes
+- Tag: 2 variants (default, outline), removable option
+- 44 tests covering all components
+- Updated framer-motion mock to support motion(Component) pattern
 
 ---
 

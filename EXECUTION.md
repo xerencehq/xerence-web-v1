@@ -2,7 +2,7 @@
 
 > **Last Updated**: 2026-01-07
 > **Total Tasks**: 17
-> **Completed**: 10
+> **Completed**: 11
 > **In Progress**: 0
 > **Blocked**: 0
 
@@ -47,7 +47,7 @@
 | T009 | Services Page | `completed` | claude-opus | 2026-01-07 20:00 | 2026-01-07 20:30 | 8 services, 15 tests passing |
 | T010 | About Page | `pending` | - | - | - | Ready - T004, T005, T006 complete |
 | T011 | Contact Page | `completed` | claude-opus | 2026-01-07 21:00 | 2026-01-07 21:30 | Form + info, 15 tests passing |
-| T012 | Book Consultation Page | `pending` | - | - | - | Ready - T007 complete |
+| T012 | Book Consultation Page | `completed` | claude-opus | 2026-01-07 22:00 | 2026-01-07 22:30 | Calendly embed, lead qualifier, 21 tests |
 | T013 | Projects Listing Page | `pending` | - | - | - | Ready - T002, T004, T005, T006 complete |
 | T014 | Project Detail Page | `pending` | - | - | - | Ready - T002, T004, T005, T006 complete |
 
@@ -174,6 +174,7 @@ When a task completes, check if any blocked tasks can be unblocked:
 | 2026-01-07 | T007 completed - Form components (Input, TextArea, Select, FormField) + validation utilities |
 | 2026-01-07 | T009 completed - Services page with 8 service offerings, hero, CTA, 15 tests |
 | 2026-01-07 | T011 completed - Contact page with form validation, contact info, social links, 15 tests |
+| 2026-01-07 | T012 completed - Book consultation page with Calendly embed, lead qualifier, 21 tests |
 
 ---
 

@@ -485,6 +485,28 @@ import { ContactHero, ContactContent } from '@/components/UI/ContactPage';
 <ContactContent />
 ```
 
+### T012: Book Consultation Page
+- ConsultationHero: Animated hero with title and subtitle
+- WhatToExpect: 4 expectations with check marks, no-commitment note
+- LeadQualifier: Optional form with budget range and project overview, saves to localStorage
+- CalendlyEmbed: Reusable component that loads Calendly inline widget with fallback link
+- 21 tests covering all components
+
+**Using Consultation Components**:
+```typescript
+import CalendlyEmbed from '@/components/Common/CalendlyEmbed';
+import { ConsultationHero, WhatToExpect, LeadQualifier } from '@/components/UI/ConsultationPage';
+
+// Calendly embed (reusable)
+<CalendlyEmbed url="https://calendly.com/xerence/30min" minHeight="700px" />
+
+// With prefill data
+<CalendlyEmbed
+  url="https://calendly.com/xerence/30min"
+  prefill={{ name: 'John', email: 'john@example.com' }}
+/>
+```
+
 ---
 
 ## Critical Integration Points

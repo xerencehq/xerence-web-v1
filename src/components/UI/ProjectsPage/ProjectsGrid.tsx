@@ -47,6 +47,8 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
       return matchesSearch && matchesTech;
     });
   }, [projects, searchQuery, selectedTech]);
+  console.log({searchQuery, filteredProjects});
+
 
   const handleTechFilter = (tech: string) => {
     setSelectedTech(selectedTech === tech ? null : tech);
@@ -60,6 +62,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
   return (
     <GridWrapper data-testid="projects-grid">
       <FiltersWrapper>
+        {(Boolean(filteredProjects.length) || searchQuery) && 
         <SearchWrapper>
           <Input
             type="text"
@@ -73,7 +76,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
               </svg>
             }
           />
-        </SearchWrapper>
+        </SearchWrapper>}
 
         {allTechTags.length > 0 && (
           <TagFilters>

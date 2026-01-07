@@ -402,6 +402,46 @@ If you need to modify a shared file, document it here first and wait for confirm
 - Updated Layout component with ThemeProvider
 - 34 new tests for homepage sections
 
+### T007: Form Components
+- Input: 3 sizes (sm, md, lg), error state, icon support, forwardRef
+- TextArea: 4 resize options (none, vertical, horizontal, both), error state
+- Select: Placeholder option, disabled options, 3 sizes, custom dropdown icon
+- FormField: Label wrapper with required indicator, error/helper text
+- Validation utilities: required, email, minLength, maxLength, phone, url
+- Form-level validation with validateForm() utility
+- 63 tests covering all components and validation functions
+
+**Using Form Components**:
+```typescript
+import { Input, TextArea, Select, FormField } from '@/components/Forms';
+import { required, email, validate } from '@/lib/validation';
+
+// Basic input with error
+<FormField label="Email" htmlFor="email" error={errors.email} required>
+  <Input id="email" type="email" error={!!errors.email} />
+</FormField>
+
+// TextArea with resize control
+<FormField label="Message" htmlFor="message">
+  <TextArea id="message" resize="vertical" rows={5} />
+</FormField>
+
+// Select with options
+<FormField label="Service" htmlFor="service">
+  <Select
+    id="service"
+    placeholder="Choose a service"
+    options={[
+      { value: 'web', label: 'Web Development' },
+      { value: 'mobile', label: 'Mobile Development' },
+    ]}
+  />
+</FormField>
+
+// Validation
+const emailError = validate(value, [required(), email()]);
+```
+
 ---
 
 ## Critical Integration Points

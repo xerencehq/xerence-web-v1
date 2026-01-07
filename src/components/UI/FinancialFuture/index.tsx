@@ -52,7 +52,7 @@ const FinancialFuture = () => {
                 <MaskText phrases={new Array(info.details)} tag="p" />
               </TextCtn>
               <SVGCtn>
-                <Image src={info.icon} alt="icon" />
+                <Image src={info.icon} width={48} height={48} alt="" aria-hidden="true" />
               </SVGCtn>
             </Card>
           ))}
@@ -68,9 +68,19 @@ const FinancialFuture = () => {
       </Inner>
       <Banner>
         {isMobile ? (
-          <Image src={future_mobile_banner} alt="future_banner" fill />
+          <Image
+            src={future_mobile_banner}
+            alt="Financial future illustration"
+            fill
+            sizes="100vw"
+          />
         ) : (
-          <Image src={future_banner} alt="future_banner" fill />
+          <Image
+            src={future_banner}
+            alt="Financial future illustration"
+            fill
+            sizes="100vw"
+          />
         )}
       </Banner>
     </Wrapper>

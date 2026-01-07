@@ -442,6 +442,30 @@ import { required, email, validate } from '@/lib/validation';
 const emailError = validate(value, [required(), email()]);
 ```
 
+### T009: Services Page
+- ServicesHero: Animated hero with title and subtitle
+- ServiceCard: Service display with icon, title, description, benefits, technologies
+- ServicesList: Renders all services with staggered animations
+- 8 service offerings (Custom Software, Mobile, AI/ML, Cloud, Web, API, UI/UX, Consulting)
+- Each service has anchor ID for hash navigation (e.g., #custom-software)
+- CTA section linking to consultation booking
+- 15 tests covering all components and accessibility
+
+**Using Services Components**:
+```typescript
+import { ServicesList, ServicesHero } from '@/components/UI/ServicesPage';
+import { SERVICES } from '@/data/services';
+
+// Hero component
+<ServicesHero title="Our Services" subtitle="Transform your ideas into reality." />
+
+// Services list
+<ServicesList services={SERVICES} />
+
+// Link to specific service
+<a href="/services#ai-ml">AI/ML Solutions</a>
+```
+
 ---
 
 ## Critical Integration Points

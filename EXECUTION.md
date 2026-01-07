@@ -2,7 +2,7 @@
 
 > **Last Updated**: 2026-01-07
 > **Total Tasks**: 17
-> **Completed**: 3
+> **Completed**: 5
 > **In Progress**: 0
 > **Blocked**: 0
 
@@ -34,8 +34,8 @@
 
 | Task | Name | Status | Agent | Started | Completed | Notes |
 |------|------|--------|-------|---------|-----------|-------|
-| T004 | Navigation System (Header) | `pending` | - | - | - | Ready - T001, T003 complete |
-| T005 | Footer Component | `pending` | - | - | - | Ready - T001, T003 complete |
+| T004 | Navigation System (Header) | `completed` | claude-opus | 2026-01-07 12:00 | 2026-01-07 12:30 | Header, Navigation, MobileMenu complete |
+| T005 | Footer Component | `completed` | claude-opus | 2026-01-07 14:00 | 2026-01-07 14:30 | Responsive footer with CTA, 13 tests passing |
 | T006 | Shared UI Components | `pending` | - | - | - | Ready - T001, T003 complete |
 | T007 | Form Components | `pending` | - | - | - | Ready - T001, T003 complete |
 
@@ -167,6 +167,8 @@ When a task completes, check if any blocked tasks can be unblocked:
 | 2026-01-06 | T001 completed - Testing infrastructure with Jest + RTL ready |
 | 2026-01-07 | T003 completed - Design system with theme, GlobalStyles, animations, mixins |
 | 2026-01-07 | T002 completed - Sanity CMS with schemas, studio, client, and queries |
+| 2026-01-07 | T004 completed - Navigation system with Header, Navigation, MobileMenu |
+| 2026-01-07 | T005 completed - Footer component with CTA and responsive design |
 
 ---
 

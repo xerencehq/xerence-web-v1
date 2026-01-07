@@ -1,71 +1,93 @@
 'use client';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { containerStyles, flexColumn } from '@/styles';
 
-export const Wrapper = styled.div`
-  padding: 8.25rem 0 10rem;
+export const Wrapper = styled.section`
+  padding: ${({ theme }) => theme.spacing[20]} 0;
+  background-color: ${({ theme }) => theme.colors.backgroundAlt};
 `;
 
 export const Inner = styled.div`
-  width: 90%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 6.25rem;
-
-  h1 {
-    max-width: 56rem;
-    font-size: 6rem;
-    font-weight: 400;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 3.75rem;
-    }
-  }
+  ${containerStyles}
+  ${flexColumn}
+  gap: ${({ theme }) => theme.spacing[12]};
 `;
 
-export const HeaderText = styled.h1`
-  max-width: 56rem;
-  font-size: 6rem;
-  font-weight: 400;
+export const SectionHeader = styled.div`
+  text-align: center;
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: clamp(
+    ${({ theme }) => theme.fontSizes['2xl']},
+    5vw,
+    ${({ theme }) => theme.fontSizes['4xl']}
+  );
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Accordion = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  ${flexColumn}
+  gap: ${({ theme }) => theme.spacing[4]};
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
 `;
 
 export const AccordionItem = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1rem;
-  border-bottom: 0.0625rem solid #3d3d3d;
+  ${flexColumn}
+  background-color: ${({ theme }) => theme.colors.backgroundLight};
+  border-radius: ${({ theme }) => theme.borderRadius.lg};
   overflow: hidden;
 `;
 
-export const Question = styled(motion.div)`
+export const Question = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  padding: ${({ theme }) => theme.spacing[5]} ${({ theme }) => theme.spacing[6]};
+  background: none;
+  border: none;
   cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  color: ${({ theme }) => theme.colors.white};
+  transition: color ${({ theme }) => theme.transitions.fast};
 
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    gap: 1rem;
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
+  svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    transition: transform ${({ theme }) => theme.transitions.fast};
+  }
+
+  &[aria-expanded='true'] svg {
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    padding: ${({ theme }) => theme.spacing[4]} ${({ theme }) => theme.spacing[4]};
+    gap: ${({ theme }) => theme.spacing[3]};
   }
 `;
 
 export const Answer = styled(motion.div)`
-  color: var(--link-color);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5rem;
+  color: ${({ theme }) => theme.colors.lightGray};
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  line-height: ${({ theme }) => theme.lineHeights.relaxed};
+  padding: 0 ${({ theme }) => theme.spacing[6]} ${({ theme }) => theme.spacing[5]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 ${({ theme }) => theme.spacing[4]} ${({ theme }) => theme.spacing[4]};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+  }
 `;

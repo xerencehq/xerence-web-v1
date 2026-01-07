@@ -1,68 +1,77 @@
 'use client';
-import React, { useRef, useState } from 'react';
-import { AnimatePresence, useInView } from 'framer-motion';
+
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { fadeInUpVariant, staggerContainerVariant } from '@/styles';
 import {
+  Wrapper,
+  Inner,
+  SectionHeader,
+  SectionTitle,
   Accordion,
   AccordionItem,
-  Answer,
-  Inner,
   Question,
-  Wrapper,
+  Answer,
 } from './styles';
-import Image from 'next/image';
-import ic_chevron_down from '../../../../public/svgs/ic_chevron_down.svg';
-import { MaskText } from '@/components';
-import { useIsMobile } from '../../../../libs/useIsMobile';
-import {
-  animate,
-  desktopHeaderPhrase,
-  faqData,
-  mobileHeaderPhrase,
-} from './constants';
+import { faqData, animate } from './constants';
 
-const FAQ = () => {
+const ChevronIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
+const FAQ: React.FC = () => {
   const [openItem, setOpenItem] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
     setOpenItem(openItem === index ? null : index);
   };
 
-  const accordionRef = useRef(null);
-  const isInView = useInView(accordionRef, {
-    once: true,
-    margin: '-10%',
-    amount: 0.4,
-  });
-
-  const isMobile = useIsMobile();
-
   return (
-    <Wrapper id="faqs">
+    <Wrapper id="faq" data-testid="faq-section">
       <Inner>
-        {isMobile ? (
-          <MaskText phrases={mobileHeaderPhrase} tag="h1" />
-        ) : (
-          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
-        )}
-        <Accordion ref={accordionRef}>
+        <SectionHeader
+          as={motion.div}
+          variants={fadeInUpVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+        >
+          <SectionTitle>Frequently Asked Questions</SectionTitle>
+        </SectionHeader>
+
+        <Accordion
+          as={motion.div}
+          variants={staggerContainerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           {faqData.map((item, index) => (
             <AccordionItem
+              key={index}
               variants={animate}
               initial="initial"
-              animate={isInView ? 'open' : ''}
+              animate="open"
               custom={index}
-              key={index}
             >
-              <Question onClick={() => toggleItem(index)}>
+              <Question
+                onClick={() => toggleItem(index)}
+                aria-expanded={openItem === index}
+                aria-controls={`faq-answer-${index}`}
+              >
                 {item.question}
-                <Image src={ic_chevron_down} alt="cheveron down" />
+                <ChevronIcon />
               </Question>
               <AnimatePresence>
                 {openItem === index && (
                   <Answer
+                    id={`faq-answer-${index}`}
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
                   >
                     {item.answer}
                   </Answer>

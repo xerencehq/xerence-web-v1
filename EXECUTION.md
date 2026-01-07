@@ -43,7 +43,7 @@
 
 | Task | Name | Status | Agent | Started | Completed | Notes |
 |------|------|--------|-------|---------|-----------|-------|
-| T008 | Homepage | `pending` | - | - | - | Ready - T004, T005, T006 complete |
+| T008 | Homepage | `completed` | claude-opus | 2026-01-07 17:00 | 2026-01-07 18:00 | 8 sections + error pages, 34 new tests |
 | T009 | Services Page | `pending` | - | - | - | Ready - T004, T005, T006 complete |
 | T010 | About Page | `pending` | - | - | - | Ready - T004, T005, T006 complete |
 | T011 | Contact Page | `blocked` | - | - | - | Waiting on T007 (Form Components) |
@@ -170,6 +170,7 @@ When a task completes, check if any blocked tasks can be unblocked:
 | 2026-01-07 | T004 completed - Navigation system with Header, Navigation, MobileMenu |
 | 2026-01-07 | T005 completed - Footer component with CTA and responsive design |
 | 2026-01-07 | T006 completed - Shared UI Components (Button, Card, Section, Typography, Badge, Tag) |
+| 2026-01-07 | T008 completed - Homepage redesign with 8 sections and error pages |
 
 ---
 

@@ -389,6 +389,19 @@ If you need to modify a shared file, document it here first and wait for confirm
 - 44 tests covering all components
 - Updated framer-motion mock to support motion(Component) pattern
 
+### T008: Homepage
+- Hero: Full-height hero with animated headline, dual CTAs
+- ValueProposition: 3 differentiators with icons, 4 stats grid
+- ServicesPreview: 4-card grid with service offerings
+- ProcessSection: 4-step process (Discovery → Design → Build → Launch)
+- ProjectsShowcase: 2 featured project cards with tech stack tags
+- Testimonials: 3 client testimonials with quotes and avatars
+- CTASection: Reusable CTA component with customizable props
+- FAQ: 6 accordion-style questions with expand/collapse
+- Global error pages: not-found.tsx, error.tsx, loading.tsx
+- Updated Layout component with ThemeProvider
+- 34 new tests for homepage sections
+
 ---
 
 ## Critical Integration Points

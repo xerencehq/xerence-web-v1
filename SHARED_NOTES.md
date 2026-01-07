@@ -295,6 +295,45 @@ Key learnings from T002 implementation:
    - Update `GoogleAnalytics.tsx` component with new provider script
    - No changes needed in components or pages
 
+### [2026-01-08 01:30] Agent: claude-opus | Task: T015
+
+**Google Analytics Integration Complete**
+
+Key learnings from T015 implementation:
+
+1. **GoogleAnalytics Component Location**: Located at `src/components/Common/Analytics/GoogleAnalytics.tsx`. Added to layout.tsx before the Layout component.
+
+2. **Using Analytics in Components**:
+   ```typescript
+   import { trackCTAClick, trackProjectView, trackContactFormSubmit } from '@/lib/analytics';
+
+   // Track CTA click
+   const handleClick = () => {
+     trackCTAClick('Book Consultation', 'Hero Section');
+   };
+
+   // Track project view
+   useEffect(() => {
+     trackProjectView(project.title);
+   }, [project.title]);
+   ```
+
+3. **Available Event Tracking Functions**:
+   - `trackCTAClick(ctaName, location)` - Track CTA button clicks
+   - `trackConsultationBooking()` - Track consultation form completion
+   - `trackNavigation(destination)` - Track navigation clicks
+   - `trackProjectView(projectName)` - Track project page views
+   - `trackProjectFilter(filterType, filterValue)` - Track filter usage
+   - `trackContactFormSubmit()` - Track contact form submissions
+   - `trackLeadQualifierSubmit(budget)` - Track lead qualifier form
+   - `trackOutboundLink(url)` - Track external link clicks
+   - `trackSocialClick(platform)` - Track social media clicks
+   - `trackScrollDepth(percentage)` - Track scroll depth
+
+4. **Environment Variable**: `NEXT_PUBLIC_GA_MEASUREMENT_ID` must be set with the GA4 measurement ID (e.g., `G-XXXXXXXXXX`).
+
+5. **Graceful Fallback**: The GoogleAnalytics component returns null if the measurement ID is not set, preventing errors in development or when GA is not configured.
+
 7. **Image Optimization**: All images use Next.js `Image` component with proper `sizes` attribute for responsive loading. T017 will audit and optimize any remaining image issues for Lighthouse scores.
 
 ---
@@ -504,6 +543,70 @@ import { ConsultationHero, WhatToExpect, LeadQualifier } from '@/components/UI/C
 <CalendlyEmbed
   url="https://calendly.com/xerence/30min"
   prefill={{ name: 'John', email: 'john@example.com' }}
+/>
+```
+
+### T015: Google Analytics Integration
+- GoogleAnalytics component in `src/components/Common/Analytics/`
+- gtag utilities in `src/lib/analytics/gtag.ts` (pageview, event, trackConversion)
+- Event tracking utilities in `src/lib/analytics/events.ts` (10 tracking functions)
+- Barrel export in `src/lib/analytics/index.ts`
+- Page view tracking on route changes via Next.js navigation hooks
+- Graceful fallback when GA_MEASUREMENT_ID is not set
+- 25 tests covering gtag and event functions
+
+**Using Analytics**:
+```typescript
+import { trackCTAClick, trackProjectView, trackContactFormSubmit } from '@/lib/analytics';
+
+// Track CTA click
+trackCTAClick('Book Consultation', 'Header');
+
+// Track project view
+trackProjectView('Insyt');
+
+// Track form submission
+trackContactFormSubmit();
+```
+
+### T016: SEO Implementation
+- Sitemap generator at `src/app/sitemap.ts` - generates /sitemap.xml with all pages
+- Robots.txt generator at `src/app/robots.ts` - generates /robots.txt with crawl rules
+- Metadata utilities in `src/lib/seo/metadata.ts` (createMetadata, rootMetadata)
+- JSON-LD utilities in `src/lib/seo/jsonld.ts` (organizationJsonLd, websiteJsonLd, etc.)
+- Barrel export in `src/lib/seo/index.ts`
+- All pages updated to use createMetadata for consistent SEO
+- Layout.tsx updated with JSON-LD structured data
+- 52 tests covering metadata and JSON-LD functions
+
+**Using SEO Utilities**:
+```typescript
+import { createMetadata } from '@/lib/seo';
+
+// In a page file
+export const metadata = createMetadata({
+  title: 'Page Title',
+  description: 'Page description',
+  path: '/page-path',
+});
+```
+
+**Using JSON-LD**:
+```typescript
+import { createProjectJsonLd, renderJsonLd } from '@/lib/seo';
+
+// Create project JSON-LD
+const projectJsonLd = createProjectJsonLd(
+  'Project Name',
+  'Project description',
+  'project-slug',
+  'https://example.com/image.png'
+);
+
+// Render in component
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: renderJsonLd(projectJsonLd) }}
 />
 ```
 

@@ -1,11 +1,14 @@
 import Layout from '@/components/Layout';
+import { GoogleAnalytics } from '@/components/Common/Analytics';
+import {
+  rootMetadata,
+  organizationJsonLd,
+  websiteJsonLd,
+  renderJsonLd,
+} from '@/lib/seo';
 import './globals.css';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Xerence',
-  description: 'Building the future of intelligent software',
-};
+export const metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -14,7 +17,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: renderJsonLd(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: renderJsonLd(websiteJsonLd),
+          }}
+        />
+      </head>
       <body>
+        <GoogleAnalytics />
         <Layout>{children}</Layout>
       </body>
     </html>

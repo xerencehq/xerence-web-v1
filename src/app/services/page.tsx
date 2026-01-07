@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { createMetadata } from '@/lib/seo';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { Section } from '@/components/Common';
@@ -7,10 +7,12 @@ import ServicesHero from '@/components/UI/ServicesPage/ServicesHero';
 import CTASection from '@/components/UI/CTASection';
 import { SERVICES } from '@/data/services';
 
-export const metadata: Metadata = {
-  title: 'Services | Xerence Innovations',
-  description: 'End-to-end software development services including custom software, mobile apps, AI/ML solutions, cloud infrastructure, and more.',
-};
+export const metadata = createMetadata({
+  title: 'Services',
+  description:
+    'End-to-end software development services including custom software, mobile apps, AI/ML solutions, cloud infrastructure, and more.',
+  path: '/services',
+});
 
 export default function ServicesPage() {
   return (

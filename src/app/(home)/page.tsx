@@ -1,3 +1,4 @@
+import { createMetadata } from '@/lib/seo';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import Hero from '@/components/UI/Hero';
@@ -8,6 +9,13 @@ import ProjectsShowcase from '@/components/UI/ProjectsShowcase';
 import Testimonials from '@/components/UI/Testimonials';
 import CTASection from '@/components/UI/CTASection';
 import FAQ from '@/components/UI/FAQ';
+
+export const metadata = createMetadata({
+  title: 'Xerence Innovations | Building Intelligent Software',
+  description:
+    'Transform your ideas into reality with custom software, mobile apps, and AI solutions. Book a free consultation today.',
+  path: '/',
+});
 
 export default function Home() {
   return (

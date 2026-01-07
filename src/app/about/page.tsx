@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { createMetadata } from '@/lib/seo';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { AboutHero, Story, Values, Team, Milestones } from '@/components/UI/AboutPage';
@@ -7,10 +7,12 @@ import { VALUES } from '@/data/values';
 import { MILESTONES } from '@/data/milestones';
 import { TEAM_MEMBERS, SHOW_TEAM_SECTION } from '@/data/team';
 
-export const metadata: Metadata = {
-  title: 'About Us | Xerence Innovations',
-  description: 'Learn about Xerence Innovations - our story, values, team, and mission to build intelligent software solutions.',
-};
+export const metadata = createMetadata({
+  title: 'About Us',
+  description:
+    'Learn about Xerence Innovations - our story, values, team, and mission to build intelligent software solutions.',
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (

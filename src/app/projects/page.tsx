@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { createMetadata } from '@/lib/seo';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { Section } from '@/components/Common';
@@ -6,10 +6,12 @@ import { ProjectsHero, ProjectsGrid } from '@/components/UI/ProjectsPage';
 import CTASection from '@/components/UI/CTASection';
 import { getAllProjects } from '@/sanity/lib/fetch';
 
-export const metadata: Metadata = {
-  title: 'Projects | Xerence Innovations',
-  description: 'Explore our portfolio of successful software projects. From AI-powered platforms to mobile apps and enterprise solutions.',
-};
+export const metadata = createMetadata({
+  title: 'Projects',
+  description:
+    'Explore our portfolio of successful software projects. From AI-powered platforms to mobile apps and enterprise solutions.',
+  path: '/projects',
+});
 
 // Revalidate every hour
 export const revalidate = 3600;

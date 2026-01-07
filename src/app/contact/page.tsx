@@ -1,12 +1,14 @@
-import { Metadata } from 'next';
+import { createMetadata } from '@/lib/seo';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { ContactHero, ContactContent } from '@/components/UI/ContactPage';
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Xerence Innovations',
-  description: 'Get in touch with Xerence Innovations. Send us a message or book a free consultation to discuss your project.',
-};
+export const metadata = createMetadata({
+  title: 'Contact Us',
+  description:
+    'Get in touch with Xerence Innovations. Send us a message or book a free consultation to discuss your project.',
+  path: '/contact',
+});
 
 export default function ContactPage() {
   return (

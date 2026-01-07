@@ -141,6 +141,55 @@ Key learnings from T003 implementation:
 
 6. **test-utils.tsx Updated**: Now uses the real theme from `@/styles/theme`.
 
+### [2026-01-07 11:30] Agent: claude-opus | Task: T002
+
+**Sanity CMS Setup Complete**
+
+Key learnings from T002 implementation:
+
+1. **Sanity Version Compatibility**: Project uses `sanity@3.75.0` and `next-sanity@9.8.57` which are compatible with Next.js 15 and React 19.
+
+2. **TypeScript Type Assertions**: Sanity's TypeScript types are overly strict for array/object fields. Use `as FieldDefinition` type assertion for fields with `of`, `fields`, or `options` properties.
+
+3. **Schema Files Structure**:
+   ```
+   src/sanity/
+   ├── env.ts           # Environment variables
+   ├── structure.ts     # Studio structure customization
+   ├── lib/
+   │   ├── client.ts    # Sanity client
+   │   ├── image.ts     # Image URL builder
+   │   ├── queries.ts   # GROQ queries
+   │   └── fetch.ts     # Server-only fetch utilities
+   └── schemas/
+       ├── index.ts     # Schema exports
+       ├── project.ts
+       ├── siteSettings.ts
+       └── blockContent.ts
+   ```
+
+4. **Accessing Sanity Studio**: Navigate to `http://localhost:3000/studio` after running `npm run dev`.
+
+5. **Environment Variables**: Already configured in `.env`:
+   - `NEXT_PUBLIC_SANITY_PROJECT_ID=v3xz1097`
+   - `NEXT_PUBLIC_SANITY_DATASET=production`
+   - `SANITY_API_READ_TOKEN` (for server-side preview)
+
+6. **Using Fetch Utilities** (server components only):
+   ```typescript
+   import { getAllProjects, getProjectBySlug } from '@/sanity/lib/fetch';
+
+   const projects = await getAllProjects();
+   const project = await getProjectBySlug('insyt');
+   ```
+
+7. **Image URLs**:
+   ```typescript
+   import { urlForImage } from '@/sanity/lib/image';
+
+   const imageUrl = urlForImage(project.featuredImage)?.url();
+   ```
+
 ---
 
 ## Decisions
@@ -223,6 +272,15 @@ If you need to modify a shared file, document it here first and wait for confirm
 - Animation utilities (keyframes + Framer Motion variants)
 - Style mixins (flexbox helpers, container, truncate, etc.)
 - Updated test-utils.tsx to use real theme
+
+### T002: Sanity CMS Complete Setup
+- Sanity Studio embedded at `/studio` route
+- Schemas: project, siteSettings, blockContent
+- Client with preview support
+- GROQ queries for projects and site settings
+- TypeScript types for all Sanity data
+- Image URL builder utilities
+- Server-only fetch utilities
 
 ---
 

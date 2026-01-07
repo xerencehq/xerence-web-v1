@@ -1,21 +1,16 @@
 'use client';
 
+import { ThemeProvider } from 'styled-components';
 import StyledComponentsRegistry from '../../../libs/registry';
-import { GlobalStyles } from './GlobalStyles';
-import { Footer, Header } from '..';
-// import { useState } from 'react';
+import { theme, GlobalStyles } from '@/styles';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  // const [complete, setComplete] = useState(false);
   return (
     <StyledComponentsRegistry>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
-        {/* <Preloader setComplete={setComplete} /> */}
-        {/* <div className={complete ? 'complete' : 'not_complete'}> */}
-          <Header />
-          {children}
-          <Footer />
-        {/* </div> */}
+        {children}
+      </ThemeProvider>
     </StyledComponentsRegistry>
   );
 };

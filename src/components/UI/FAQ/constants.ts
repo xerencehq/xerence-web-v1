@@ -3,8 +3,9 @@ type FAQItem = {
   answer: string;
 };
 
-export const desktopHeaderPhrase = ['Frequently asked', 'questions'];
-export const mobileHeaderPhrase = ['Frequently', 'asked', 'questions'];
+export const desktopHeaderPhrase = ['Frequently Asked', 'Questions'];
+export const mobileHeaderPhrase = ['Frequently', 'Asked', 'Questions'];
+
 export const animate = {
   initial: {
     y: '100%',
@@ -19,48 +20,33 @@ export const animate = {
 
 export const faqData: FAQItem[] = [
   {
-    question: 'What services does Xerence offer?',
+    question: 'How long does a typical project take?',
     answer:
-      'We specialize in AI-powered software development, technology consultancy, and custom-built digital products that prioritize security, innovation, and user experience.',
+      "Project timelines vary based on scope and complexity. A simple MVP might take 8-12 weeks, while larger enterprise solutions can span several months. We'll provide a detailed timeline during our consultation.",
   },
   {
-    question: 'Who are your solutions designed for?',
+    question: 'What technologies do you use?',
     answer:
-      'Our solutions are built for startups, enterprises, and government organizations looking to innovate, scale securely, and stay ahead of the curve.',
+      "We use modern, battle-tested technologies including React, Next.js, Node.js, Python, and cloud platforms like AWS and GCP. We select the best tools for each project's specific needs.",
   },
   {
-    question: 'Do you offer fully custom software development?',
+    question: 'Do you provide ongoing support?',
     answer:
-      "Yes, we collaborate closely with clients to build tailored solutions from the ground up — whether it's a platform, mobile app, internal tool, or AI-driven system.",
+      'Yes! We offer maintenance and support packages to ensure your product continues to perform optimally after launch.',
+  },
+  {
+    question: 'What does the consultation include?',
+    answer:
+      "Our free 30-minute consultation covers your project goals, technical requirements, timeline, and budget considerations. You'll receive actionable insights regardless of whether we work together.",
   },
   {
     question: 'What industries do you work with?',
     answer:
-      "We’re industry-agnostic but have experience across finance, health, e-commerce, education, and government sectors.",
-  },
-  {
-    question: 'How does your AI integration work?',
-    answer:
-      "We leverage modern AI technologies to automate processes, enhance decision-making, and improve user interaction. We’ll work with you to determine the right models and architecture for your needs.",
+      "We're industry-agnostic but have experience across finance, health, e-commerce, education, and government sectors.",
   },
   {
     question: 'Is security a core part of your development process?',
     answer:
-      "Absolutely. We integrate strong security practices at every stage — from architecture to deployment — using encryption, compliance standards, and secure coding techniques.",
-  },
-  {
-    question: 'Can I consult with Xerence before starting a project?',
-    answer:
-      "Yes, we offer expert technology consulting to help define your vision, assess feasibility, and outline a strategic plan before development begins.",
-  },
-  {
-    question: 'Do you work with existing systems or only build from scratch?',
-    answer:
-      "We do both. Whether you need to modernize an existing system, integrate AI into your workflows, or build a new solution, we can help.",
-  },
-  {
-    question: 'How can I get started with Xerence?',
-    answer:
-      "Simply reach out through our email hello@xerence.com to request a free consultation. We’ll set up a discovery session to understand your needs and explore the best path forward.",
+      'Absolutely. We integrate strong security practices at every stage — from architecture to deployment — using encryption, compliance standards, and secure coding techniques.',
   },
 ];

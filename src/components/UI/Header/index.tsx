@@ -34,7 +34,7 @@ const Header = () => {
               animate={isOpen ? 'open' : 'closed'}
               initial="closed"
             ></motion.div>
-            <Image src={ic_bars} alt="bars" />
+            <Image src={ic_bars} width={24} height={24} alt="" aria-hidden="true" />
           </BurgerMenu>
         </LogoContainer>
         <Nav className={isOpen ? 'active' : ''}>

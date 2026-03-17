@@ -14,15 +14,15 @@ export const FOOTER_LINKS = {
 } as const;
 
 export const SOCIAL_LINKS = [
-  { name: 'Twitter', href: 'https://twitter.com/xerence', icon: 'twitter' },
+  // { name: 'Twitter', href: 'https://twitter.com/xerence', icon: 'twitter' },
   { name: 'LinkedIn', href: 'https://linkedin.com/company/xerence', icon: 'linkedin' },
-  { name: 'GitHub', href: 'https://github.com/xerence', icon: 'github' },
+  // { name: 'GitHub', href: 'https://github.com/xerence', icon: 'github' },
 ] as const;
 
 export const CONTACT_INFO = {
   email: 'hello@xerence.com',
-  phone: '+1 (555) 123-4567',
-  address: 'Innovation Hub, Tech District',
+  phone: '+1 (619) 853-7564',
+  address: '1021 E Lincolnway Suite #9497, Cheyenne, Wyoming 82001, United States',
 } as const;
 
 export const COMPANY_INFO = {

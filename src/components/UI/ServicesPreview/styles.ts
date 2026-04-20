@@ -69,7 +69,12 @@ export const ServiceIcon = styled.div`
   background: rgba(236, 255, 136, 0.1);
   border-radius: ${({ theme }) => theme.borderRadius.lg};
   margin-bottom: ${({ theme }) => theme.spacing[4]};
-  font-size: 24px;
+  color: ${({ theme }) => theme.colors.primary};
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
 `;
 
 export const ServiceTitle = styled.h3`

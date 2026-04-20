@@ -66,7 +66,11 @@ export const IconWrapper = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.lg};
   margin-bottom: ${({ theme }) => theme.spacing[4]};
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 28px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 export const CardTitle = styled.h3`

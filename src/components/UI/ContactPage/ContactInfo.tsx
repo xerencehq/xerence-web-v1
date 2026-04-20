@@ -107,7 +107,7 @@ const ContactInfo: React.FC = () => {
             <LinkedInIcon />
           </SocialLink>
           <SocialLink
-            href="https://github.com/xerence"
+            href="https://github.com/xerencehq"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"

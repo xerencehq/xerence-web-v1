@@ -9,6 +9,7 @@ import ProjectsShowcase from '@/components/UI/ProjectsShowcase';
 import Testimonials from '@/components/UI/Testimonials';
 import CTASection from '@/components/UI/CTASection';
 import FAQ from '@/components/UI/FAQ';
+import { getFeaturedProjects } from '@/sanity/lib/fetch';
 
 export const metadata = createMetadata({
   title: 'Xerence Innovations | Building Intelligent Software',
@@ -17,7 +18,11 @@ export const metadata = createMetadata({
   path: '/',
 });
 
-export default function Home() {
+export const revalidate = 3600;
+
+export default async function Home() {
+  const featuredProjects = await getFeaturedProjects();
+
   return (
     <>
       <Header />
@@ -26,7 +31,7 @@ export default function Home() {
         <ValueProposition />
         <ServicesPreview />
         <ProcessSection />
-        <ProjectsShowcase />
+        <ProjectsShowcase projects={featuredProjects} />
         <Testimonials />
         <CTASection />
         <FAQ />

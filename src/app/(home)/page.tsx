@@ -6,7 +6,7 @@ import ValueProposition from '@/components/UI/ValueProposition';
 import ServicesPreview from '@/components/UI/ServicesPreview';
 import ProcessSection from '@/components/UI/ProcessSection';
 import ProjectsShowcase from '@/components/UI/ProjectsShowcase';
-import Testimonials from '@/components/UI/Testimonials';
+// import Testimonials from '@/components/UI/Testimonials';
 import CTASection from '@/components/UI/CTASection';
 import FAQ from '@/components/UI/FAQ';
 import { getFeaturedProjects } from '@/sanity/lib/fetch';
@@ -32,7 +32,7 @@ export default async function Home() {
         <ServicesPreview />
         <ProcessSection />
         <ProjectsShowcase projects={featuredProjects} />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <CTASection />
         <FAQ />
       </main>

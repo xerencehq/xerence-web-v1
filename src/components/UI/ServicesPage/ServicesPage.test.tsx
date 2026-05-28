@@ -64,8 +64,8 @@ describe('ServiceCard', () => {
 
   it('renders CTA button linking to consultation', () => {
     render(<ServiceCard service={mockService} />);
-    const link = screen.getByRole('link', { name: /book a call/i });
-    expect(link).toHaveAttribute('href', '/book-consultation');
+    const link = screen.getByRole('link', { name: /let's talk/i });
+    expect(link).toHaveAttribute('href', '/book-meeting');
   });
 
   it('renders icon', () => {

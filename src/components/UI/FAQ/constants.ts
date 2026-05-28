@@ -22,7 +22,7 @@ export const faqData: FAQItem[] = [
   {
     question: 'How long does a typical project take?',
     answer:
-      "Project timelines vary based on scope and complexity. A simple MVP might take 8-12 weeks, while larger enterprise solutions can span several months. We'll provide a detailed timeline during our consultation.",
+      "Project timelines vary based on scope and complexity. A simple MVP might take 8-12 weeks, while larger enterprise solutions can span several months. We'll map out a detailed timeline on our intro call.",
   },
   {
     question: 'What technologies do you use?',
@@ -35,9 +35,9 @@ export const faqData: FAQItem[] = [
       'Yes! We offer maintenance and support packages to ensure your product continues to perform optimally after launch.',
   },
   {
-    question: 'What does the consultation include?',
+    question: 'What happens on the intro call?',
     answer:
-      "Our free 30-minute consultation covers your project goals, technical requirements, timeline, and budget considerations. You'll receive actionable insights regardless of whether we work together.",
+      "Our 30-minute intro call covers your project goals, technical requirements, timeline, and budget. You'll walk away with clear next steps whether we end up working together or not.",
   },
   {
     question: 'What industries do you work with?',

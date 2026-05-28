@@ -14,7 +14,7 @@ import { getFeaturedProjects } from '@/sanity/lib/fetch';
 export const metadata = createMetadata({
   title: 'Xerence Innovations | Building Intelligent Software',
   description:
-    'Transform your ideas into reality with custom software, mobile apps, and AI solutions. Book a free consultation today.',
+    "A product studio shipping custom software, mobile apps, and AI products end to end. Got an idea? Let's talk.",
   path: '/',
 });
 

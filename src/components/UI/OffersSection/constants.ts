@@ -9,13 +9,13 @@ export const desktopHeaderPhrases = [
 ];
 export const desktopParagraphPhrase = [
   'At Xerence, we build more than software — we engineer possibilities.',
-  "From cutting-edge AI-powered applications to tailored digital products and expert tech consultancy.",
+  "A product studio shipping AI-powered apps and custom digital products end to end.",
 ];
 
 // For mobile
 export const mobileParagraphPhrase = [
   'At Xerence, we build more than software — we engineer possibilities.',
-  "From cutting-edge AI-powered applications to tailored digital products and expert tech consultancy.",
+  "A product studio shipping AI-powered apps and custom digital products end to end.",
 ];
 
 export const offers = [

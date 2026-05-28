@@ -27,7 +27,7 @@ const WhatToExpect: React.FC = () => {
       </ExpectTitle>
 
       <motion.p variants={fadeInUpVariant}>
-        In this free 30-minute consultation, we&apos;ll:
+        On our 30-minute intro call, we&apos;ll:
       </motion.p>
 
       <ExpectList>

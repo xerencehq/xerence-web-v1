@@ -43,8 +43,8 @@ describe('Footer', () => {
 
   it('should render CTA section', () => {
     render(<Footer />);
-    expect(screen.getByText('Ready to Start Your Project?')).toBeInTheDocument();
-    expect(screen.getByText('Book a Free Consultation')).toBeInTheDocument();
+    expect(screen.getByText('Got something to build?')).toBeInTheDocument();
+    expect(screen.getByText("Let's talk")).toBeInTheDocument();
   });
 
   it('should render copyright with current year', () => {
@@ -61,8 +61,8 @@ describe('Footer', () => {
 
   it('should have correct link destinations', () => {
     render(<Footer />);
-    const ctaLink = screen.getByText('Book a Free Consultation');
-    expect(ctaLink).toHaveAttribute('href', '/book-consultation');
+    const ctaLink = screen.getByText("Let's talk");
+    expect(ctaLink).toHaveAttribute('href', '/book-meeting');
   });
 
   it('should have brand logo link to home', () => {

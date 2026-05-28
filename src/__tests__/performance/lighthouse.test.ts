@@ -221,7 +221,7 @@ describe('Image Optimizations', () => {
 describe('JavaScript Optimizations', () => {
   describe('Dynamic imports', () => {
     it('should lazy load CalendlyEmbed (documented expectation)', () => {
-      // Verified by: book-consultation/page.tsx using dynamic() with ssr: false
+      // Verified by: book-meeting/page.tsx using dynamic() with ssr: false
       expect(true).toBe(true);
     });
   });

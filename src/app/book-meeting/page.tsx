@@ -6,10 +6,10 @@ import CalendlyEmbedWrapper from '@/components/Common/CalendlyEmbed/CalendlyEmbe
 import { ConsultationHero, WhatToExpect, LeadQualifier } from '@/components/UI/ConsultationPage';
 
 export const metadata = createMetadata({
-  title: 'Book a Free Consultation',
+  title: "Let's talk",
   description:
-    'Schedule a free 30-minute consultation to discuss your project. No commitment required.',
-  path: '/book-consultation',
+    "Book a 30-minute intro call. Tell us about your idea and we'll figure out if we're a fit. No pitch deck required.",
+  path: '/book-meeting',
 });
 
 const CALENDLY_URL = 'https://calendly.com/xerence/30min';
@@ -20,8 +20,8 @@ export default function BookConsultationPage() {
       <Header />
       <main>
         <ConsultationHero
-          title="Book a Free Consultation"
-          subtitle="Let's discuss how we can help bring your vision to life."
+          title="Let's talk"
+          subtitle="Tell us about your idea. We'll figure out the rest together."
         />
 
         <Section padding="md" background="alt">

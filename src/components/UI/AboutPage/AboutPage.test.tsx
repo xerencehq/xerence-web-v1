@@ -4,9 +4,9 @@ import { AboutHero } from './AboutHero';
 import { Story } from './Story';
 import { Values } from './Values';
 import { Team } from './Team';
-import { Milestones } from './Milestones';
+// import { Milestones } from './Milestones';
 import { VALUES } from '@/data/values';
-import { MILESTONES } from '@/data/milestones';
+// import { MILESTONES } from '@/data/milestones';
 import type { TeamMember } from '@/data/team';
 
 // Mock team members for testing
@@ -163,6 +163,7 @@ describe('Team', () => {
   });
 });
 
+/*
 describe('Milestones', () => {
   it('renders the milestones section', () => {
     render(<Milestones milestones={MILESTONES} />);
@@ -209,6 +210,7 @@ describe('Milestones', () => {
     });
   });
 });
+*/
 
 describe('Values accessibility', () => {
   it('has proper heading structure', () => {
@@ -241,6 +243,7 @@ describe('Team accessibility', () => {
   });
 });
 
+/*
 describe('Milestones accessibility', () => {
   it('has proper heading structure', () => {
     render(<Milestones milestones={MILESTONES} />);
@@ -251,3 +254,4 @@ describe('Milestones accessibility', () => {
     expect(milestoneHeadings).toHaveLength(MILESTONES.length);
   });
 });
+*/

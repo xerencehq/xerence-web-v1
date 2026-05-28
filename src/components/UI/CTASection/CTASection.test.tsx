@@ -5,20 +5,19 @@ import CTASection from './index';
 describe('CTASection', () => {
   it('should render the headline', () => {
     render(<CTASection />);
-    expect(screen.getByText(/Ready to bring your idea to life/i)).toBeInTheDocument();
+    expect(screen.getByText(/Got something to build/i)).toBeInTheDocument();
   });
 
   it('should render the CTA button', () => {
     render(<CTASection />);
-    const ctaButton = screen.getByRole('link', { name: /Book a Free Consultation/i });
+    const ctaButton = screen.getByRole('link', { name: /Let's talk/i });
     expect(ctaButton).toBeInTheDocument();
-    expect(ctaButton).toHaveAttribute('href', '/book-consultation');
+    expect(ctaButton).toHaveAttribute('href', '/book-meeting');
   });
 
   it('should render supporting text', () => {
     render(<CTASection />);
-    // The subtitle contains "30-minute consultation"
-    expect(screen.getByText(/We'll discuss your project/i)).toBeInTheDocument();
+    expect(screen.getByText(/Tell us about your idea/i)).toBeInTheDocument();
   });
 
   it('should have proper section structure', () => {

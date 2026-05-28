@@ -76,6 +76,7 @@ export const MenuCTA = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};
+    color: ${({ theme }) => theme.colors.background};
   }
 
   &:focus-visible {

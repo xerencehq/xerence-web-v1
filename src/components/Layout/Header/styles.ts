@@ -65,6 +65,7 @@ export const CTAButton = styled.a`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryHover};
+    color: ${({ theme }) => theme.colors.background};
     transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.glow};
   }

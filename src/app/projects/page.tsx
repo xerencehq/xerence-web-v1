@@ -35,8 +35,8 @@ export default async function ProjectsPage() {
         <CTASection
           title="Have a project in mind?"
           subtitle="Let's discuss how we can help bring your idea to life."
-          buttonText="Book a Free Consultation"
-          buttonHref="/book-consultation"
+          buttonText="Let's talk"
+          buttonHref="/book-meeting"
           showBenefits={false}
         />
       </main>

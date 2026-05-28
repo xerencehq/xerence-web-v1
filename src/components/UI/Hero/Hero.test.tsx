@@ -16,9 +16,9 @@ describe('Hero', () => {
 
   it('should render primary CTA button', () => {
     render(<Hero />);
-    const ctaButton = screen.getByRole('link', { name: /Book a Free Consultation/i });
+    const ctaButton = screen.getByRole('link', { name: /Let's talk/i });
     expect(ctaButton).toBeInTheDocument();
-    expect(ctaButton).toHaveAttribute('href', '/book-consultation');
+    expect(ctaButton).toHaveAttribute('href', '/book-meeting');
   });
 
   it('should render secondary CTA button', () => {

@@ -37,6 +37,7 @@ const variantStyles = {
 
     &:hover:not(:disabled) {
       background-color: ${({ theme }) => theme.colors.primaryHover};
+      color: ${({ theme }) => theme.colors.background};
       box-shadow: ${({ theme }) => theme.shadows.glow};
     }
   `,
@@ -46,6 +47,7 @@ const variantStyles = {
 
     &:hover:not(:disabled) {
       background-color: ${({ theme }) => theme.colors.darkGray};
+      color: ${({ theme }) => theme.colors.white};
     }
   `,
   outline: css`

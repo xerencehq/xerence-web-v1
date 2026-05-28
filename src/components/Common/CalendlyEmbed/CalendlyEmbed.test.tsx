@@ -43,7 +43,7 @@ describe('CalendlyEmbed', () => {
 
   it('iframe has accessible title', () => {
     render(<CalendlyEmbed url={testUrl} />);
-    const iframe = screen.getByTitle(/schedule a consultation/i);
+    const iframe = screen.getByTitle(/schedule a call/i);
     expect(iframe).toBeInTheDocument();
   });
 });

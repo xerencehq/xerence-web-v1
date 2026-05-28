@@ -145,9 +145,9 @@ const Footer: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <CTATitle>Ready to Start Your Project?</CTATitle>
-          <CTAButton as={Link} href="/book-consultation">
-            Book a Free Consultation
+          <CTATitle>Got something to build?</CTATitle>
+          <CTAButton as={Link} href="/book-meeting">
+            Let&apos;s talk
           </CTAButton>
         </FooterCTA>
 

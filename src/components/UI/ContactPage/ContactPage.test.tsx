@@ -138,8 +138,8 @@ describe('ContactInfo', () => {
 
   it('renders consultation CTA', () => {
     render(<ContactInfo />);
-    expect(screen.getByText(/looking for a consultation/i)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /book a call/i })).toHaveAttribute('href', '/book-consultation');
+    expect(screen.getByText(/got an idea/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /let's talk/i })).toHaveAttribute('href', '/book-meeting');
   });
 });
 

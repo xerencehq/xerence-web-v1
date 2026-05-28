@@ -1,10 +1,10 @@
 import { createMetadata } from '@/lib/seo';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
-import { AboutHero, Story, Values, Team, Milestones } from '@/components/UI/AboutPage';
+import { AboutHero, Story, Values, Team /* , Milestones */ } from '@/components/UI/AboutPage';
 import CTASection from '@/components/UI/CTASection';
 import { VALUES } from '@/data/values';
-import { MILESTONES } from '@/data/milestones';
+// import { MILESTONES } from '@/data/milestones';
 import { TEAM_MEMBERS, SHOW_TEAM_SECTION } from '@/data/team';
 
 export const metadata = createMetadata({
@@ -30,13 +30,13 @@ export default function AboutPage() {
 
         {SHOW_TEAM_SECTION && <Team members={TEAM_MEMBERS} />}
 
-        <Milestones milestones={MILESTONES} />
+        {/* <Milestones milestones={MILESTONES} /> */}
 
         <CTASection
           title="Want to work with us?"
-          subtitle="Let's discuss how we can help bring your vision to life."
-          buttonText="Book a Free Consultation"
-          buttonHref="/book-consultation"
+          subtitle="Tell us what you're building. We'll figure out the rest together."
+          buttonText="Let's talk"
+          buttonHref="/book-meeting"
           showBenefits={false}
         />
       </main>

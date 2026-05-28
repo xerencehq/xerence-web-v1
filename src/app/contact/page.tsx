@@ -6,7 +6,7 @@ import { ContactHero, ContactContent } from '@/components/UI/ContactPage';
 export const metadata = createMetadata({
   title: 'Contact Us',
   description:
-    'Get in touch with Xerence Innovations. Send us a message or book a free consultation to discuss your project.',
+    "Get in touch with Xerence. Send us a message or book a 30-minute intro call to talk through your project.",
   path: '/contact',
 });
 

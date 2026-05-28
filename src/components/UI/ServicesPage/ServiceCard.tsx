@@ -119,8 +119,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         )}
 
         <ServiceActions>
-          <Button href="/book-consultation" variant="outline" size="sm">
-            Book a Call
+          <Button href="/book-meeting" variant="outline" size="sm">
+            Let&apos;s talk
           </Button>
         </ServiceActions>
       </ServiceContent>

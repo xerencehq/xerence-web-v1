@@ -30,9 +30,9 @@ export default function ServicesPage() {
 
         <CTASection
           title="Not sure which service you need?"
-          subtitle="Book a free consultation and we'll help you figure out the best approach for your project."
-          buttonText="Book a Free Consultation"
-          buttonHref="/book-consultation"
+          subtitle="Tell us about the problem. We'll help you figure out the best approach."
+          buttonText="Let's talk"
+          buttonHref="/book-meeting"
           showBenefits={false}
         />
       </main>

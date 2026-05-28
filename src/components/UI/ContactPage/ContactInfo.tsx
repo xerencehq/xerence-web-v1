@@ -120,12 +120,12 @@ const ContactInfo: React.FC = () => {
       <Divider />
 
       <ConsultationCTA>
-        <CTATitle>Looking for a consultation?</CTATitle>
+        <CTATitle>Got an idea?</CTATitle>
         <CTAText>
-          Book a free 30-minute call to discuss your project in detail.
+          Grab 30 minutes on the calendar. Tell us about it.
         </CTAText>
-        <Button href="/book-consultation" variant="primary" size="sm">
-          Book a Call
+        <Button href="/book-meeting" variant="primary" size="sm">
+          Let&apos;s talk
         </Button>
       </ConsultationCTA>
     </ContactInfoWrapper>

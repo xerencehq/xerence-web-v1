@@ -37,8 +37,8 @@ const Hero: React.FC = () => {
         </motion.div>
 
         <CTAContainer as={motion.div} variants={fadeInUpVariant}>
-          <Button href="/book-consultation" size="lg">
-            Book a Free Consultation
+          <Button href="/book-meeting" size="lg">
+            Let&apos;s talk
           </Button>
           <Button href="/projects" variant="outline" size="lg">
             View Our Work

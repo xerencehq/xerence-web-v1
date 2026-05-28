@@ -7,8 +7,8 @@ export const NAV_LINKS = [
 ] as const;
 
 export const CTA_LINK = {
-  label: 'Book a Consultation',
-  href: '/book-consultation',
+  label: "Let's talk",
+  href: '/book-meeting',
 } as const;
 
 export type NavLink = (typeof NAV_LINKS)[number];

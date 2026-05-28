@@ -22,7 +22,7 @@ const CalendlyEmbed: React.FC<CalendlyEmbedProps> = ({
         src={embedUrl}
         style={{ minWidth: '320px', height: minHeight }}
         frameBorder="0"
-        title="Schedule a consultation"
+        title="Schedule a call"
       />
       <FallbackLink>
         Having trouble?{' '}

@@ -13,7 +13,7 @@ describe('WhatToExpect', () => {
 
   it('renders the introduction text', () => {
     render(<WhatToExpect />);
-    expect(screen.getByText(/in this free 30-minute consultation/i)).toBeInTheDocument();
+    expect(screen.getByText(/on our 30-minute intro call/i)).toBeInTheDocument();
   });
 
   it('renders all expectation items', () => {
@@ -105,11 +105,11 @@ describe('ConsultationHero', () => {
   it('renders title and subtitle', () => {
     render(
       <ConsultationHero
-        title="Book a Free Consultation"
+        title="Let's talk"
         subtitle="Let's discuss your project."
       />
     );
-    expect(screen.getByRole('heading', { name: /book a free consultation/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /let's talk/i })).toBeInTheDocument();
     expect(screen.getByText(/let's discuss your project/i)).toBeInTheDocument();
   });
 });

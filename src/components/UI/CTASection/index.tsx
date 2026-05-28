@@ -22,18 +22,18 @@ export interface CTASectionProps {
 }
 
 const DEFAULT_BENEFITS = [
-  'Free 30-minute consultation',
-  'No obligation',
-  'Expert advice',
-  'Actionable insights',
+  '30-min intro call',
+  'No pitch deck',
+  'Honest takes',
+  'Clear next steps',
 ];
 
 const CTASection: React.FC<CTASectionProps> = ({
-  title = 'Ready to bring your idea to life?',
-  subtitle = 'Book a free 30-minute consultation with our team. We\'ll discuss your project, provide expert insights, and outline a path forward.',
+  title = 'Got something to build?',
+  subtitle = "Tell us about your idea. We'll dig into the problem, sketch an approach, and figure out if we're a fit.",
   showBenefits = true,
-  buttonText = 'Book a Free Consultation',
-  buttonHref = '/book-consultation',
+  buttonText = "Let's talk",
+  buttonHref = '/book-meeting',
 }) => {
   return (
     <CTAWrapper data-testid="cta-section">

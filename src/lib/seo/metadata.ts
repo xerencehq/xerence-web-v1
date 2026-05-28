@@ -72,7 +72,7 @@ export const rootMetadata: Metadata = {
     'machine learning',
     'cloud infrastructure',
     'web development',
-    'tech consulting',
+    'product studio',
   ],
   authors: [{ name: 'Xerence Innovations' }],
   creator: 'Xerence Innovations',

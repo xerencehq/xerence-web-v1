@@ -95,8 +95,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <CTASection
           title="Want to build something similar?"
           subtitle="Let's discuss how we can create something amazing for you."
-          buttonText="Book a Free Consultation"
-          buttonHref="/book-consultation"
+          buttonText="Let's talk"
+          buttonHref="/book-meeting"
           showBenefits={false}
         />
       </main>

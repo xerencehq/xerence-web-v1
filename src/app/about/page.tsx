@@ -20,7 +20,7 @@ export default function AboutPage() {
       <Header />
       <main>
         <AboutHero
-          title="About Xerence"
+          title="About Xerence Innovations"
           subtitle="Building tomorrow's technology, today."
         />
 

@@ -22,7 +22,10 @@ export const SOCIAL_LINKS = [
 export const CONTACT_INFO = {
   email: 'hello@xerence.com',
   phone: '+1 (619) 853-7564',
-  address: '1021 E Lincolnway Suite #9497, Cheyenne, Wyoming 82001, United States',
+  addresses: [
+    '1021 E Lincolnway Suite #9497, Cheyenne, Wyoming 82001, United States',
+    '242 Royal Street, MAB Global Estate, Karsana, FCT, Nigeria',
+  ],
 } as const;
 
 export const COMPANY_INFO = {

@@ -131,7 +131,9 @@ const Footer: React.FC = () => {
                   </a>
                 </ContactItem>
                 <ContactItem>{CONTACT_INFO.phone}</ContactItem>
-                <ContactItem>{CONTACT_INFO.address}</ContactItem>
+                {CONTACT_INFO.addresses.map((address) => (
+                  <ContactItem key={address}>{address}</ContactItem>
+                ))}
               </ColumnList>
             </FooterColumn>
           </FooterColumns>

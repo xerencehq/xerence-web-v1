@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@/__tests__/test-utils';
 import Footer from './index';
-import { FOOTER_LINKS, SOCIAL_LINKS, COMPANY_INFO } from './constants';
+import { FOOTER_LINKS, SOCIAL_LINKS, COMPANY_INFO, CONTACT_INFO } from './constants';
 
 describe('Footer', () => {
   it('should render the footer', () => {
@@ -83,5 +83,19 @@ describe('Footer', () => {
   it('should render contact information', () => {
     render(<Footer />);
     expect(screen.getByText('hello@xerence.com')).toBeInTheDocument();
+  });
+
+  it('should render both US and Nigeria addresses', () => {
+    render(<Footer />);
+    expect(CONTACT_INFO.addresses).toHaveLength(2);
+    CONTACT_INFO.addresses.forEach((address) => {
+      expect(screen.getByText(address)).toBeInTheDocument();
+    });
+    expect(
+      screen.getByText('242 Royal Street, MAB Global Estate, Karsana, FCT, Nigeria')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('1021 E Lincolnway Suite #9497, Cheyenne, Wyoming 82001, United States')
+    ).toBeInTheDocument();
   });
 });
